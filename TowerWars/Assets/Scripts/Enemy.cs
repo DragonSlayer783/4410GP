@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public float accel;
     [SerializeField]
     private double currentSpeed;
+    public float price;
     // Start is called before the first frame update
     void Start()
     {
