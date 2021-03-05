@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public EnemyController myMaster;
     private Rigidbody2D rb;
-    public float maxSpeed;
+    public float baseSpeed;
+    [SerializeField]
+    float maxSpeed;
     public float accel;
     [SerializeField]
     private double currentSpeed;
     public float price;
+    public string enemyName;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        myMaster = GameObject.Find("AIManager").GetComponent<EnemyController>();
+        maxSpeed = baseSpeed + Random.Range(-myMaster.variation, myMaster.variation);
     }
 
     // Update is called once per frame
@@ -27,7 +33,12 @@ public class Enemy : MonoBehaviour
 
         if(gameObject.transform.position.y < -5)
         {
-            Destroy(gameObject);
+            myMaster.DESTROY_ME(gameObject);
         }
+    }
+
+    public float Get_Price()
+    {
+        return price;
     }
 }

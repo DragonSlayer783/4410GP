@@ -16,16 +16,18 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="Digitop.svg">
+   sodipodi:docname="Digitop.svg"
+   inkscape:export-filename="C:\Users\sjacu\Documents\GitHub\4410GP\TowerWars\Assets\Images\Digi-Top.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <defs
      id="defs4">
     <pattern
        inkscape:collect="always"
        xlink:href="#Strips1_1white"
-       id="pattern4853"
-       patternTransform="matrix(0,9.9999999,-9.9999999,0,0,0)" />
+       id="pattern5576"
+       patternTransform="matrix(0,7.0239603,-37.901366,0,-9.2578125e-5,-2.0382812e-5)" />
     <pattern
-       inkscape:isstock="true"
        inkscape:stockid="Stripes 1:1 white"
        id="Strips1_1white"
        patternTransform="translate(0,0) scale(10,10)"
@@ -49,25 +51,20 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.25"
-     inkscape:cx="816.4936"
-     inkscape:cy="939.14006"
+     inkscape:zoom="1.3124781"
+     inkscape:cx="-193.64075"
+     inkscape:cy="1007.2009"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="px"
-     showguides="false"
+     showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:window-width="1600"
-     inkscape:window-height="837"
-     inkscape:window-x="1912"
-     inkscape:window-y="1072"
-     inkscape:window-maximized="1">
-    <sodipodi:guide
-       position="-2.4343099,1015.8562"
-       orientation="1,0"
-       id="guide5584" />
-  </sodipodi:namedview>
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="584"
+     inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -81,12 +78,27 @@
     </rdf:RDF>
   </metadata>
   <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="BackSquare"
+     sodipodi:insensitive="true"
+     style="display:none">
+    <rect
+       transform="translate(0,1107.6378)"
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect5578"
+       width="3856.6782"
+       height="2183.8374"
+       x="0"
+       y="-1115.3384" />
+  </g>
+  <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,1107.6378)">
     <rect
-       style="opacity:1;fill:url(#pattern4853);fill-opacity:1;stroke:none;stroke-width:5.01423025;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:url(#pattern5576);fill-opacity:1;stroke:none;stroke-width:5.01423025;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect4136"
        width="3840"
        height="2160"

@@ -7,8 +7,10 @@ public class GameController : MonoBehaviour
 {
     //Money for the player
     public float money;
+    
     //Used to control how fast we give money
     bool gaveMoney = false;
+    
     //Reference to money UI text
     public Text moneyText;
 

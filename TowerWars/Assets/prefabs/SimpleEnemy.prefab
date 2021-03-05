@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1648401948804702770}
   - component: {fileID: 1648401948804702769}
   - component: {fileID: 8048944330565833577}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SimpleEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648401948804702768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.49, y: 0.060000002, z: 0}
-  m_LocalScale: {x: 0.20050803, y: 0.20050803, z: 0.20050803}
+  m_LocalPosition: {x: 6.153384, y: 0.49260318, z: 0}
+  m_LocalScale: {x: 0.11285443, y: 0.11285443, z: 0.11285443}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -144,6 +144,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a254f8e4ab0f06842a7b06d12a4fa7b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
+  myMaster: {fileID: 0}
+  baseSpeed: 1
+  maxSpeed: 0
   accel: 1000
   currentSpeed: 0
+  price: 2
+  enemyName: simpleEnemy
