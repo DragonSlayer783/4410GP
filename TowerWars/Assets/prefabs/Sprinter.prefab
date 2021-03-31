@@ -146,8 +146,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myMaster: {fileID: 0}
   baseSpeed: 5
-  maxSpeed: 0
   accel: 2000
+  maxSpeed: 0
   currentSpeed: 0
-  price: 15
+  price: 3
   enemyName: sprinter

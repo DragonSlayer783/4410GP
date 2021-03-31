@@ -5,21 +5,26 @@ using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
-    private GameController master;
-    public List<GameObject> unitOptions;
-    public List<int> counts;
-    public Transform spawnPoint;
-    public bool ready;
+    private GameController master;  //reference to game controller
+    public List<GameObject> unitOptions;    //list of available units it can spawn
+    public List<int> counts;    //counts of each unit
+    public Transform spawnPoint;    //the enemy spawn point
+    public Text moneyText;  //text on the screen to display enemy money
     [SerializeField]
-    private float money;
-    private bool gaveMoney;
-    public float moneyTime;
-    public float spawnTime;
-    public Text moneyText;
-    public int chooseIndex;
-    public float waitTime;
-    public bool isSpawning;
-    public float variation = 0.5f;
+    private float money;    //how much "money" the AI has.
+    [SerializeField]
+    public int chooseIndex; //AI's choice for what unit to spawn
+
+    //editor variables
+    public float variation; //slight speed variation for enemies
+    public float moneyTime; //how long between currency generation
+    public float spawnTime; //how long to wait before attempting to spawn units.
+
+    //private semaphores
+    private bool isSpawning;//spawn semaphore
+    private bool ready;     //unit choice semaphore
+    private bool gaveMoney; //money semaphore
+    
 
     void Start()
     {
@@ -55,15 +60,16 @@ public class EnemyController : MonoBehaviour
         //If the AI is ready and allowed to spawn a unit, spawn a unit.
         if(master.canEnemySpawn)
         {
+            //if ai is not ready (has not chosen a unit)
             if(!ready)
             {
-                Debug.Log("I'm not ready.  Choosing index...");
+                //will choose unit, call itself ready
                 Choose_Unit();
-                Debug.Log("I have chosen unit " + chooseIndex.ToString() + ", I am ready to spawn.");
                 ready = true;
             }
             else if(!isSpawning)
             {
+                //if it's ready and isn't spawning, it will try and spawn.
                 isSpawning = true;
                 Invoke("Spawn_Unit", spawnTime);
             }
@@ -88,28 +94,25 @@ public class EnemyController : MonoBehaviour
     //will decide which unit it wants to spawn in by index
     public void Choose_Unit()
     {
-        Debug.Log("Choosing...");
         chooseIndex = Random.Range(0, unitOptions.Count);
     }
 
+    //function will actually spawn units
     public void Spawn_Unit()
     {
-        Debug.Log("Attempting to Spawn Unit.  It costs " + unitOptions[chooseIndex].GetComponent<Enemy>().price);
-        //Debug.Log("I want to spawn a unit who's price is " + unitOptions[index].GetComponent<Enemy>().price.ToString());
+        //if Ai can afford uniy, it will reduce money by price, spawn at spawn point, and unready itself
         if(money >= unitOptions[chooseIndex].GetComponent<Enemy>().price)
         {
-            Debug.Log("I have enough money, spawning...");
             money -= unitOptions[chooseIndex].GetComponent<Enemy>().price;
             Instantiate(unitOptions[chooseIndex], spawnPoint.position, Quaternion.identity);
             counts[chooseIndex]++;
-            Debug.Log("I spawned the unit.  Waiting to Settle");
-            Invoke("UnReady", waitTime);
-        }else{
-            Debug.Log("I dont have enough money.  Not enough money.");
+            UnReady();
+        }else{  //if ai can't afford, will set spawning to false and try again later
             isSpawning = false;
         }
     }
 
+    //will be called by enemy
     public void DESTROY_ME(GameObject deadEnemy)
     {
         //Manager will look for the enemy in it's unit options, and ajust the count in the parallel list.
@@ -121,9 +124,11 @@ public class EnemyController : MonoBehaviour
                 break;
             }
         }
+        //destroys enemy
         Destroy(deadEnemy);
     }
 
+    //unit will set AI ready to choose new unit and spawn new unit.
     public void UnReady()
     {
         ready = false;

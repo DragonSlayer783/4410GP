@@ -5,18 +5,12 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    //Money for the player
-    public float money;
     
-    //Used to control how fast we give money
-    bool gaveMoney = false;
-    
-    //Reference to money UI text
-    public Text moneyText;
+    public float money; //player money
+    bool gaveMoney = false; //player money semaphore    
+    public Text moneyText; //Reference to money UI text
+    public bool canEnemySpawn; //tells the AI manager if it can spawn
 
-    public bool canEnemySpawn;
-
-    //Update is called once per frame
     void Update()
     {
         //If we haven't given money

@@ -431,7 +431,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 100
-    m_Alignment: 5
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
@@ -462,7 +462,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -450, y: 450}
+  m_AnchoredPosition: {x: -725, y: 450}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 1, y: 0}
 --- !u!1 &330849252
@@ -706,15 +706,12 @@ MonoBehaviour:
   - {fileID: 1648401948804702768, guid: 1f253778defa8074ba10b326c5246748, type: 3}
   counts: 
   spawnPoint: {fileID: 841558628}
-  ready: 0
-  money: 0
-  moneyTime: 1
-  spawnTime: 0
   moneyText: {fileID: 330849254}
+  money: 0
   chooseIndex: 0
-  waitTime: 0
-  isSpawning: 0
   variation: 0.1
+  moneyTime: 0.5
+  spawnTime: 2
 --- !u!1 &1256767814
 GameObject:
   m_ObjectHideFlags: 0
